@@ -4,20 +4,16 @@ require "sqlite3"
 require "pry"
 
 DATABASE = SQLite3::Database.new("slideshow.db")
-
+require_relative "database_setup.rb"
 require_relative "models/slide.rb"
 
 
-get "/" do
+get '/' do
+  
   erb :homepage
 end
 
-
-get "/nextslide" do
-
-end
-
-
-get"/lastslide" do
-  
+get '/allslides' do
+  all_slides=Slide.fetch_all # this returns an array of hashes
+  all_slides.to_json
 end
