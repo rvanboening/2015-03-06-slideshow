@@ -18,8 +18,8 @@ get '/allslides' do
   all_slides.to_json
 end
 
-get '/oneslide' do 
-  one_slide = Slide.fetch_slide(1) 
+get '/oneslide/:id' do 
+  one_slide = Slide.fetch_slide[params(:id)]
   binding.pry
   one_slide.to_json
 end
