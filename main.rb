@@ -17,3 +17,9 @@ get '/allslides' do
   all_slides=Slide.fetch_all # this returns an array of hashes
   all_slides.to_json
 end
+
+get '/oneslide' do 
+  one_slide = Slide.fetch_slide(1) 
+  binding.pry
+  one_slide.to_json
+end
