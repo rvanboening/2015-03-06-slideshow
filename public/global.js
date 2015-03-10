@@ -33,7 +33,7 @@ window.onload = function(){
   console.log(parsed_response)
   document.getElementById("result_title").innerHTML = parsed_response[i].title;
   document.getElementById("result_body").innerHTML = parsed_response[i].body;
-  }
+  } 
 }
 };
 
