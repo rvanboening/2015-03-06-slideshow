@@ -1,30 +1,35 @@
 
 
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 
+<link rel="stylesheet" href="/css/style.css" type="text/css" charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
 <script src="/global.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-<h1>Slide</h1>
-<p>The time is <strong><%= Time.now %></strong>.</p>
-
-<hr>
-
-<p>Use the resource routes pattern to get information about students.</p>
-
-<!-- <a href="#" id="slide_show2">This is the Slideshow 2</a><br> -->
-<a href="#" id="slide_show">This is the Slideshow</a><br>
-
- </div>
+<body>
+<div class="header">
+<h1>Slide Show</h1>
+<h2>Basic Design Priciples</h2>
+    <a href="#" id="slide_show">This is the Slideshow</a><br>
     <button href="#" id="last_slide">Back</button>
     <button href="#" id="next_slide">Next</button>
 </div>
 
-<hr>
+<div class = "slidebox">
+  <div class="sidebar">
+      <h2>London</h2>
+      <p>London is the capital city of England.</p>
+  </div>
 
-<div id="results">
-    <h1><div id="result_title">
-    </div></h1>
-    <p><div id="result_body">
-    </div></p>
+<div class="slideshow">
+    <h1 id="result_title"></h1>
+    <p id="result_body"></p>
 </div>
 
-    
+</div>
+
+</body>
+</html>
