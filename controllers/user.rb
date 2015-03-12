@@ -4,14 +4,20 @@ get '/login' do
 end
 
 post '/login_success' do
-  params["password"] = BCrypt::Password.create(params[:password])
-  new_user=User.create(user_name: params["user_name"], password: params["password"])
-  binding.pry
-  redirect '/'
+    if User.find_by_user_name(params[:user_name]) != nil
+      user = User.find_by_user_name(params[:user_name])
+      if BCrypt::Password.new(user.password) == params[:password]
+        session[:user] = user.user_name
+        redirect '/'
+      else 
+        redirect '/login'
+      end
+    else 
+      redirect '/login'
+    end
 end
 
 get '/logout' do
-  
   redirect '/login'
 end
 
