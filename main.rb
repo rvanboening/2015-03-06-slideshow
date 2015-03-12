@@ -22,32 +22,20 @@ get '/login' do
 end
 
 post '/login_success' do
-  
-  user_name=params[:user_name]
-  password=params[:password]
-  user = BCrypt::Password.create(user_name: params[:user_name], password: params[:password])
+  params["password"] = BCrypt::Password.create(params[:password])
+  new_user=User.create(user_name: params["user_name"], password: params["password"])
   binding.pry
-  user.save
   redirect '/'
- 
-  # if user = User.find_by({user_name => "user_name"})
-#     if BCrypt::Password.create(params[:password]) == params[:password]
-#       session[:id] = user.id
-#       redirect "/"
-#       binding.pry
-#     else
-#       @error = "Password incorrect"
-#     end
-#   else
-#     params["password"] = BCrypt::Password.create(params[:password])
-#     User.create(username: params["username"], password: params["password"])
-#   end
-#   redirect "/"
-  
-  
-  
-  
 end
+  # user_name=params[:user_name]
+ #  password=params[:password]
+ #  user = User.new(user_name: params[:user_name], password: params[:password])
+ #  binding.pry
+ #  user.save
+ #  redirect '/'
+ #
+  
+
 
 get '/allslides' do
   all_slides=Slide.all # this returns an array of hashes
