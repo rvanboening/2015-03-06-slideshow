@@ -1,0 +1,52 @@
+.slidebox{
+  float: left;
+  margin: 5px;
+  padding: 15px;
+  max-width: 1000px;
+  margin-top: 200px;
+}
+.sidebar, .slideshow {
+float: left;
+margin: 5px;
+padding: 15px;
+height: 300px;
+border: 1px solid black;
+font-family: 'PT Sans Narrow', sans-serif;
+} 
+.sidebar{
+  width: 10%;
+  background-color: white;
+}
+
+.slideshow{
+  width:75%;
+  background-color:white;
+}
+.header{
+  background-image: url("/photos/watercolor-lime-green.jpg");
+/*  background-color: #ffff73;*/
+  font-family: 'PT Sans Narrow', sans-serif;
+  padding: 2%;
+  text-align: center;
+  color: #ffff73;
+  height: 300px;
+  position: fixed;
+  width: 100%;
+  top: 0%;
+  z-index:-1;
+  
+}
+
+.header h1 {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.header h2 {
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+li {
+  padding: 10px;  
+}

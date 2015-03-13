@@ -1,5 +1,5 @@
 
-get '/' do
+get '/slides' do
   erb :homepage
 end
 

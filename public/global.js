@@ -19,7 +19,7 @@ window.onload = function(){
   var i = 0;
   
   document.getElementById("next_slide").onclick = function() {
-    if (i < 4) {
+    if (i < 5) {
   i++; 
   console.log(parsed_response)
   document.getElementById("result_title").innerHTML = parsed_response[i].title;
