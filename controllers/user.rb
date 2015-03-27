@@ -9,6 +9,7 @@ post '/login_success' do
       user = User.find_by_user_name(params[:user_name])
       if BCrypt::Password.new(user.password) == params[:password]
         session[:user_name] = user.user_name
+        
         redirect '/slides'
       else
         redirect '/'
@@ -19,6 +20,7 @@ post '/login_success' do
 end
 
 get '/logout' do
+  session.clear
   redirect '/'
 end
 

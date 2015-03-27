@@ -13,11 +13,10 @@
 <div class="header">
 <h1>Slide Show</h1>
 <h2>Healthy Alphabet</h2>
-
+<p><a href=/logout>Logout</a></p>
     <% if session[:user_name] != nil %>
     <div id="user">Hello, <%= session[:user_name] %>!</div>
     <%end%>
-
     <a href="#" id="slide_show">This is the Slideshow</a><br>
     <button href="#" id="last_slide">Back</button>
     <button href="#" id="next_slide">Next</button>
