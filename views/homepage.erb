@@ -12,7 +12,12 @@
 <body>
 <div class="header">
 <h1>Slide Show</h1>
-<h2>Basic Design Priciples</h2>
+<h2>Healthy Alphabet</h2>
+
+    <% if session[:user_name] != nil %>
+    <div id="user">Hello, <%= session[:user_name] %>!</div>
+    <%end%>
+
     <a href="#" id="slide_show">This is the Slideshow</a><br>
     <button href="#" id="last_slide">Back</button>
     <button href="#" id="next_slide">Next</button>
@@ -20,14 +25,10 @@
 
 <div class = "slidebox">
   <div class="sidebar">
-      <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-      </ul>     
+       <ul>
+               <li>
+               <li>
+        </ul>
   </div>
 
 <div class="slideshow">
@@ -35,6 +36,7 @@
     <p id="result_body"></p>
 </div>
 
+  
 </div>
 
 </body>
