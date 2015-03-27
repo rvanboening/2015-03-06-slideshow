@@ -1,8 +1,16 @@
 
-DATABASE.results_as_hash = true
 
-DATABASE.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, user_name TEXT,
-                  password TEXT, email TEXT)")
-                  
-DATABASE.execute("CREATE TABLE IF NOT EXISTS slides (id INTEGER PRIMARY KEY, 
-                  title TEXT, body TEXT)")
+unless ActiveRecord::Base.connection.table_exists?(:users)
+ ActiveRecord::Base.connection.create_table :users do |t|
+ t.text :user_name
+ t.text :password
+ t.text :email
+ end
+end
+
+unless ActiveRecord::Base.connection.table_exists?(:slides)
+ ActiveRecord::Base.connection.create_table :slides do |t|
+ t.text :title
+ t.text :body
+ end
+end
