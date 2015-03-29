@@ -1,8 +1,8 @@
 var parsed_response;
 
 window.onload = function(){
-
-
+  var parsed_response = document.getElementById("parsed_response");
+  
   document.getElementById("slide_show").onclick = loadSlide
   function loadSlide() {
     var js_req = new XMLHttpRequest;
@@ -19,7 +19,7 @@ window.onload = function(){
   var i = 0;
   
   document.getElementById("next_slide").onclick = function() {
-    if (i < 5 ) {
+    if (i < parsed_response.length - 1) {
   i++; 
   console.log(parsed_response)
   document.getElementById("result_title").innerHTML = parsed_response[i].title;
